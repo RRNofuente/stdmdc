@@ -42,3 +42,10 @@
 
     --bxs-primary: 1px 2px 4px var(--txt-secondary);
 }
+
+body {
+    font-family: var(--ff-default, sans-serif);
+    font-weight: var(--fw-regular);
+    background: var(--clr-light);
+    color: var(--txt-secondary);
+}
