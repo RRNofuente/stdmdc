@@ -245,3 +245,25 @@ nav {
         }
     }
 }
+
+#mission-vision-goals-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spc-800);
+    justify-content: center;
+    align-items: baseline;
+
+    padding-block: var(--spc-900);
+    padding-inline: var(--spc-800);
+
+    & .mvg-card {
+        width: 280px;
+        display: grid;
+        justify-items: center;
+        gap: var(--spc-600);
+
+        & svg {
+            fill: var(--clr-primary);
+        }
+    }
+}
