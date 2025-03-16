@@ -341,3 +341,47 @@ nav {
         width: 200px;
     }
 }
+
+#contact-section {
+    display: grid;
+    gap: var(--spc-700);
+
+    padding-block: var(--spc-900);
+    padding-inline: var(--spc-800);
+
+    & h2 {
+        text-align: center;
+    }
+
+    & > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spc-500);
+        place-items: start;
+
+        & div:has(h3) {
+            display: grid;
+            gap: var(--spc-500);
+        }
+
+        & h3 {
+            font-size: calc(var(--fs-heading-tertiary) * 0.8);
+            font-weight: var(--fw-medium);
+            line-height: calc(var(--lh-heading-tertiary) * 0.8);
+            margin-bottom: 1rem;
+        }
+
+        & p {
+            margin-bottom: 0.5rem;
+        }
+
+        & .cta-primary {
+            justify-self: start;
+        }
+
+        & div:has(iframe) {
+            border-radius: 40px;
+            overflow: hidden;
+        }
+    }
+}
