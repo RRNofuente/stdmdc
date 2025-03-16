@@ -316,3 +316,28 @@ nav {
         }
     }
 }
+
+#accreditations-section {
+    display: grid;
+    gap: var(--spc-700);
+
+    padding-block: var(--spc-900);
+    padding-inline: var(--spc-800);
+
+    & h2,
+    p {
+        text-align: center;
+    }
+
+    & .accreditations-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spc-700);
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .accreditation-logo-container {
+        width: 200px;
+    }
+}
