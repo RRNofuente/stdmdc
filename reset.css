@@ -38,7 +38,8 @@ h5 {
 
 img,
 picture,
-svg {
+svg,
+iframe {
     display: block;
     max-width: 100%;
 }
