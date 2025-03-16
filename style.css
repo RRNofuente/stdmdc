@@ -42,7 +42,7 @@
     --spc-800: clamp(1.5rem, 0.8571rem + 3.2143vw, 3.75rem);
     --spc-700: clamp(1.25rem, 0.8929rem + 1.7857vw, 2.5rem);
     --spc-600: clamp(1rem, 0.75rem + 1.25vw, 1.875rem);
-    --spc-400: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+    --spc-500: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
 
     --bxs-primary: 1px 2px 4px var(--txt-secondary);
 }
@@ -118,7 +118,52 @@ nav a {
     color: inherit;
 }
 
-nav li a:is(:hover, :focus, :focus-visible) {
+nav li a:hover {
+    color: var(--clr-secondary);
+}   
+
+nav li a:is(:focus, :focus-visible) {
     color: var(--clr-secondary);
     text-decoration: underline;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spc-500);
+
+    padding-block: var(--spc-600);
+    padding-inline: var(--spc-800);
+
+    & .brand-wrapper > a {
+        display: flex;
+        align-items: center;
+        gap: var(--spc-500);
+
+        & .brand-logo-wrapper {
+            min-width: 64px;
+        }
+
+        & .brand-title-wrapper {
+            text-align: center;
+            text-wrap: balance;
+
+            & > div:first-child {
+                font-size: var(--fs-heading-tertiary);
+            }
+
+            & > div:last-child {
+                font-size: calc(var(--fs-paragraph) * 1.05);
+            }
+        }
+    }
+
+    & ul {
+        display: flex;
+        align-items: center;
+        gap: var(--spc-600);
+
+        text-wrap: nowrap;
+    }
 }
