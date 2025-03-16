@@ -120,7 +120,7 @@ nav a {
 
 nav li a:hover {
     color: var(--clr-secondary);
-}   
+}
 
 nav li a:is(:focus, :focus-visible) {
     color: var(--clr-secondary);
@@ -165,5 +165,49 @@ nav {
         gap: var(--spc-600);
 
         text-wrap: nowrap;
+    }
+}
+
+#hero-section {
+    display: grid;
+    grid-template-columns: minmax(35ch, 1fr) minmax(300px, 1fr);
+    align-items: center;
+    gap: var(--spc-500);
+
+    padding-block: var(--spc-900);
+    padding-inline: var(--spc-800);
+
+    & .text-content-cta-wrapper {
+        display: grid;
+        gap: var(--spc-600);
+        justify-items: start;
+    }
+
+    & .image-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        background: url(./assets/backgrounds/hero_images_background.webp) top
+            left -20px/120% no-repeat;
+
+        & img {
+            border-radius: 40px;
+            overflow: hidden;
+        }
+
+        & div:first-child {
+            justify-self: end;
+            width: 80%;
+            aspect-ratio: 1;
+        }
+
+        & div:nth-child(2) {
+            align-self: end;
+        }
+
+        & div:last-child {
+            grid-column: 1 / -1;
+        }
     }
 }
