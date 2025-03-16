@@ -385,3 +385,8 @@ nav {
         }
     }
 }
+
+footer {
+    text-align: center;
+    padding-block: var(--spc-700);
+}
