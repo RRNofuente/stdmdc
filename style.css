@@ -7,6 +7,10 @@
     font-display: swap;
 }
 
+* {
+    outline: 1px dotted red;
+}
+
 :root {
     --fs-heading-primary: clamp(1.875rem, 1.4821rem + 1.9643vw, 3.25rem);
     --fs-heading-secondary: clamp(1.5rem, 1.2857rem + 1.0714vw, 2.25rem);
@@ -30,8 +34,8 @@
     --clr-secondary: hsl(30, 100%, 58%);
     --clr-light: hsl(0, 0%, 100%);
 
-    --txt-primary: hsl(228, 28%, 20%);
-    --txt-secondary: hsl(0, 0%, 45%);
+    --txt-heading: hsl(228, 28%, 20%);
+    --txt-paragraph: hsl(0, 0%, 45%);
     --txt-light: hsl(0, 0%, 100%);
 
     --spc-900: clamp(1.875rem, 0.9821rem + 4.4643vw, 5rem);
@@ -45,7 +49,76 @@
 
 body {
     font-family: var(--ff-default, sans-serif);
+    font-size: var(--fs-paragraph);
     font-weight: var(--fw-regular);
+    line-height: var(--lh-paragraph);
     background: var(--clr-light);
-    color: var(--txt-secondary);
+    color: var(--txt-paragraph);
+}
+
+.cta-primary {
+    background-color: var(--clr-primary);
+    color: var(--txt-light);
+
+    font-size: var(--fs-paragraph);
+    font-weight: var(--fw-regular);
+
+    padding: 0.75em 2.25em;
+    border: none;
+    border-radius: 32px;
+
+    cursor: pointer;
+}
+
+.cta-primary:hover {
+    opacity: 0.9;
+}
+
+.cta-primary:focus,
+.cta-primary:focus-visible {
+    outline: 2px solid var(--clr-secondary);
+}
+
+.cta-primary:active {
+    transform: scale(0.95);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--txt-heading);
+}
+
+h1 {
+    font-size: var(--fs-heading-primary);
+    font-weight: var(--fw-extrabold);
+    line-height: var(--lh-heading-primary);
+}
+
+section > h2 {
+    font-size: var(--fs-heading-secondary);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-heading-secondary);
+}
+
+section > div h2 {
+    font-size: var(--fs-heading-tertiary);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-heading-tertiary);
+}
+
+nav,
+footer {
+    background: var(--clr-primary);
+    color: var(--txt-light);
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav li a:is(:hover, :focus, :focus-visible) {
+    color: var(--clr-secondary);
+    text-decoration: underline;
 }
