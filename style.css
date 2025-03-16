@@ -6,3 +6,39 @@
     font-style: normal;
     font-display: swap;
 }
+
+:root {
+    --fs-heading-primary: clamp(1.875rem, 1.4821rem + 1.9643vw, 3.25rem);
+    --fs-heading-secondary: clamp(1.5rem, 1.2857rem + 1.0714vw, 2.25rem);
+    --fs-heading-tertiary: clamp(1.25rem, 1.1071rem + 0.7143vw, 1.75rem);
+    --fs-paragraph: 1rem;
+
+    --lh-heading-primary: clamp(2.4375rem, 1.9196rem + 2.5893vw, 4.25rem);
+    --lh-heading-secondary: clamp(2.25rem, 1.9286rem + 1.6071vw, 3.375rem);
+    --lh-heading-tertiary: clamp(1.625rem, 1.4464rem + 0.8929vw, 2.25rem);
+    --lh-paragraph: 1.25rem;
+
+    --fw-extrabold: 800;
+    --fw-bold: 700;
+    --fw-semibold: 600;
+    --fw-medium: 500;
+    --fw-regular: 400;
+
+    --ff-default: "Playfair Display";
+
+    --clr-primary: hsl(137, 56%, 24%);
+    --clr-secondary: hsl(30, 100%, 58%);
+    --clr-light: hsl(0, 0%, 100%);
+
+    --txt-primary: hsl(228, 28%, 20%);
+    --txt-secondary: hsl(0, 0%, 45%);
+    --txt-light: hsl(0, 0%, 100%);
+
+    --spc-900: clamp(1.875rem, 0.9821rem + 4.4643vw, 5rem);
+    --spc-800: clamp(1.5rem, 0.8571rem + 3.2143vw, 3.75rem);
+    --spc-700: clamp(1.25rem, 0.8929rem + 1.7857vw, 2.5rem);
+    --spc-600: clamp(1rem, 0.75rem + 1.25vw, 1.875rem);
+    --spc-400: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+
+    --bxs-primary: 1px 2px 4px var(--txt-secondary);
+}
