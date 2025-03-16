@@ -181,6 +181,10 @@ nav {
         display: grid;
         gap: var(--spc-600);
         justify-items: start;
+
+        & h1 {
+            text-wrap: balance;
+        }
     }
 
     & .image-content-wrapper {
@@ -208,6 +212,36 @@ nav {
 
         & div:last-child {
             grid-column: 1 / -1;
+        }
+    }
+}
+
+#about-section {
+    display: grid;
+    gap: var(--spc-700);
+
+    padding-block: var(--spc-900);
+    padding-inline: var(--spc-800);
+
+    & h2 {
+        text-align: center;
+    }
+
+    & > div {
+        display: grid;
+        grid-template-columns: minmax(300px, 1fr) minmax(35ch, 1fr);
+        align-items: center;
+        gap: var(--spc-500);
+
+        & div:has(img) {
+            border-radius: 40px;
+            overflow: hidden;
+            width: clamp(300px, 100%, 600px);
+        }
+
+        & div:has(p) {
+            display: grid;
+            gap: var(--spc-500);
         }
     }
 }
