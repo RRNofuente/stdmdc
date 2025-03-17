@@ -311,7 +311,7 @@ nav {
             padding: var(--spc-600) var(--spc-700);
 
             & :is(ul, ol) > li {
-                margin-inline-start: calc(var(--spc-500) * 0.65);
+                margin-inline-start: calc(var(--spc-500) * 0.4);
             }
         }
     }
@@ -389,4 +389,11 @@ nav {
 footer {
     text-align: center;
     padding-block: var(--spc-700);
+}
+
+@media (min-width: 90em) {
+    body > * {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
 }
