@@ -1,10 +1,10 @@
 @font-face {
-    font-family: "Playfair Display";
-    src: url("./fonts/PlayfairDisplay-Regular.woff2") format("woff2"),
-        url("./fonts/PlayfairDisplay-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+    font-family: "Adjusted Georgia";
+    src: local(Georgia);
+    size-adjust: 101%;
+    ascent-override: 110%;
+    descent-override: 22%;
+    line-gap-override: normal;
 }
 
 /* * {
@@ -46,15 +46,6 @@
     --spc-500: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
 
     --bxs-primary: 1px 2px 4px var(--txt-secondary);
-}
-
-body {
-    font-family: var(--ff-default, sans-serif);
-    font-size: var(--fs-paragraph);
-    font-weight: var(--fw-regular);
-    line-height: var(--lh-paragraph);
-    background: var(--clr-light);
-    color: var(--txt-paragraph);
 }
 
 .cta-primary {
@@ -147,6 +138,11 @@ nav {
 
         & .brand-logo-wrapper {
             min-width: 64px;
+
+            & > img {
+                aspect-ratio: 80 / 80;
+                height: auto;
+            }
         }
 
         & .brand-title-wrapper {
@@ -207,15 +203,29 @@ nav {
         & div:first-child {
             justify-self: end;
             width: 80%;
-            aspect-ratio: 1;
+
+            & > img {
+                aspect-ratio: 256 / 232;
+                height: auto;
+            }
         }
 
         & div:nth-child(2) {
             align-self: end;
+
+            & > img {
+                aspect-ratio: 320 / 167;
+                height: auto;
+            }
         }
 
         & div:last-child {
             grid-column: 1 / -1;
+
+            & > img {
+                aspect-ratio: 650 / 260;
+                height: auto;
+            }
         }
     }
 }
@@ -240,7 +250,12 @@ nav {
         & div:has(img) {
             border-radius: 40px;
             overflow: hidden;
-            width: clamp(300px, 100%, 600px);
+            min-width: 300px;
+            max-width: 600px;
+            & > img {
+                aspect-ratio: 600 / 334;
+                height: auto;
+            }
         }
 
         & div:has(p) {
@@ -268,6 +283,8 @@ nav {
 
         & svg {
             fill: var(--clr-primary);
+            aspect-ratio: 200 / 200;
+            height: auto;
         }
     }
 }
@@ -343,6 +360,10 @@ nav {
 
     & .accreditation-logo-container {
         width: 200px;
+
+        & > img {
+            height: auto;
+        }
     }
 }
 
@@ -386,6 +407,12 @@ nav {
         & div:has(iframe) {
             border-radius: 40px;
             overflow: hidden;
+            width: 100%;
+
+            & > iframe {
+                aspect-ratio: 600 / 450;
+                height: auto;
+            }
         }
     }
 }

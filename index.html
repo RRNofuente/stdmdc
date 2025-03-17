@@ -38,11 +38,37 @@
     <link rel="apple-touch-icon" href="https://www.stdmdc.com/assets/STDMDC_logo.svg">
     <link rel="icon" href="https://www.stdmdc.com/assets/STDMDC_logo.svg" type="image/x-icon">
 
+    <link rel="preload" href="./style.css" as="style" />
+    <link rel="preload" href="./fonts/PlayfairDisplay-Regular.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./modern-normalize.css">
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./style.css">
+    <style>
+        @font-face {
+            font-family: "Playfair Display";
+            src: url("./fonts/PlayfairDisplay-Regular.woff2") format("woff2"),
+                url("./fonts/PlayfairDisplay-Regular.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            font-family: var(--ff-default, "Adjusted Georgia");
+            font-size: var(--fs-paragraph);
+            font-weight: var(--fw-regular);
+            line-height: var(--lh-paragraph);
+            background: var(--clr-light);
+            color: var(--txt-paragraph);
+        }
+    </style>
+
+    <link rel="stylesheet" href="./modern-normalize.css" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="./reset.css" media="print" onload="this.media='all'" />
+
     <script src="./index.js" defer></script>
+
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
@@ -52,7 +78,7 @@
                 <div class="brand-wrapper">
                     <a href="#">
                         <div class="brand-logo-wrapper">
-                            <img loading="lazy" src="./assets/STDMDC_logo.svg"
+                            <img width="80" height="80" src="./assets/STDMDC_logo.svg"
                                 alt="St. Thomas Diagnostic Medical and Dental Clinic, Inc.">
                         </div>
                         <div id="brand-title-wrapper" class="brand-title-wrapper">
@@ -61,7 +87,7 @@
                         </div>
                     </a>
                 </div>
-                <div aria-label="Menu" class="mobile-menu">
+                <div title="Menu" class="mobile-menu">
 
                 </div>
             </div>
@@ -102,9 +128,9 @@
                 <button class="cta-primary">CONTACT US</button>
             </div>
             <div class="image-content-wrapper">
-                <div><img loading="lazy" src="./assets/hero/hero_image_1.webp" alt=""></div>
-                <div><img loading="lazy" src="./assets/hero/hero_image_2.webp" alt=""></div>
-                <div><img loading="lazy" src="./assets/hero/hero_image_3.webp" alt=""></div>
+                <div><img width="256" height="232" src="./assets/hero/hero_image_1.webp" alt=""></div>
+                <div><img width="320" height="167" src="./assets/hero/hero_image_2.webp" alt=""></div>
+                <div><img width="650" height="260" src="./assets/hero/hero_image_3.webp" alt=""></div>
             </div>
         </section>
     </header>
@@ -112,7 +138,7 @@
         <section id="about-section">
             <h2>ABOUT US</h2>
             <div>
-                <div><img loading="lazy" src="./assets/STDMDC.webp" alt=""></div>
+                <div><img width="600" height="334" src="./assets/STDMDC.webp" alt=""></div>
                 <div>
                     <p>St. Thomas Diagnostic Medical and Dental Clinic has been a trusted provider of reliable,
                         compassionate, and client-focused healthcare services since 1992. We specialize in delivering
@@ -254,19 +280,21 @@
             <div class="accreditations-wrapper">
                 <div class="accreditation-logo-container">
                     <a href="https://ddb.gov.ph/" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy" src="./assets/accreditations/Dangerous_Drugs_Board_(DDB).svg"
+                        <img width="200" height="200" loading="lazy"
+                            src="./assets/accreditations/Dangerous_Drugs_Board_(DDB).svg"
                             alt="Dangerous Drugs Board (DDB)" title="Dangerous Drugs Board (DDB)">
                     </a>
                 </div>
                 <div class="accreditation-logo-container">
                     <a href="https://doh.gov.ph/" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy" src="./assets/accreditations/Department_of_Health_(DOH)_PHL.svg"
+                        <img width="200" height="200" loading="lazy"
+                            src="./assets/accreditations/Department_of_Health_(DOH)_PHL.svg"
                             alt="Department of Health (DOH) Philippines" title="Department of Health (DOH) Philippines">
                     </a>
                 </div>
                 <div class="accreditation-logo-container">
                     <a href="https://www.tesda.gov.ph/" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy"
+                        <img width="200" height="250" loading="lazy"
                             src="./assets/accreditations/Technical_Education_and_Skills_Development_Authority_(TESDA).svg"
                             alt="Technical Education and Skills Development Authority (TESDA)"
                             title="Technical Education and Skills Development Authority (TESDA)">
@@ -274,14 +302,15 @@
                 </div>
                 <div class="accreditation-logo-container">
                     <a href="https://www.prc.gov.ph/" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy" src="./assets/accreditations/Professional_Regulation_Commission_(PRC).svg"
+                        <img width="200" height="200" loading="lazy"
+                            src="./assets/accreditations/Professional_Regulation_Commission_(PRC).svg"
                             alt="Professional Regulation Commission (PRC)"
                             title="Professional Regulation Commission (PRC)">
                     </a>
                 </div>
                 <div class="accreditation-logo-container">
                     <a href="https://www.iso.org/home.html" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy"
+                        <img width="200" height="162.5" loading="lazy"
                             src="./assets/accreditations/International_Organization_for_Standardization_(ISO).svg"
                             alt="International Organization for Standardization (ISO)"
                             title="International Organization for Standardization (ISO)">
@@ -289,7 +318,8 @@
                 </div>
                 <div class="accreditation-logo-container">
                     <a href="https://www.foi.gov.ph/agencies/dole/" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy" src="./assets/accreditations/Department_of_Labor_and_Employment_(DOLE).svg"
+                        <img width="200" height="172.4" loading="lazy"
+                            src="./assets/accreditations/Department_of_Labor_and_Employment_(DOLE).svg"
                             alt="Department of Labor and Employment (DOLE)"
                             title="Department of Labor and Employment (DOLE)">
                     </a>
@@ -297,20 +327,21 @@
                 <div class="accreditation-logo-container">
                     <a href="https://www.sgs.com/en/services/iso-9001-certification-quality-management-system"
                         target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy" src="./assets/accreditations/ISO_9001_2000_SGS.svg"
+                        <img width="200" height="200" loading="lazy" src="./assets/accreditations/ISO_9001_2000_SGS.svg"
                             alt="International Organization for Standardization 9001 SGS"
                             title="International Organization for Standardization 9001 SGS">
                     </a>
                 </div>
                 <div class="accreditation-logo-container">
                     <a href="https://marina.gov.ph/" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy" src="./assets/accreditations/Maritime_Industry_Authority_(MARINA).svg"
+                        <img width="200" height="200" loading="lazy"
+                            src="./assets/accreditations/Maritime_Industry_Authority_(MARINA).svg"
                             alt="Maritime Industry Authority (MARINA)" title="Maritime Industry Authority (MARINA)">
                     </a>
                 </div>
                 <div class="accreditation-logo-container">
                     <a href="https://www.ukas.com/" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy"
+                        <img width="200" height="260" loading="lazy"
                             src="./assets/accreditations/United_Kingdom_Accreditation_Service_(UKAS).svg"
                             alt="United Kingdom Accreditation Service (UKAS)"
                             title="United Kingdom Accreditation Service (UKAS)">
@@ -318,7 +349,7 @@
                 </div>
                 <div class="accreditation-logo-container">
                     <a href="https://dmw.gov.ph/archives/default.html" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy"
+                        <img width="200" height="173" loading="lazy"
                             src="./assets/accreditations/Philippine_Overseas_Employment_Administration_(POEA).svg"
                             alt="Philippine Overseas Employment Administration (POEA)"
                             title="Philippine Overseas Employment Administration (POEA)">
@@ -326,7 +357,8 @@
                 </div>
                 <div class="accreditation-logo-container">
                     <a href="https://www.malaysia.gov.my/portal/content/137" target="_blank" rel="noopener noreferrer">
-                        <img loading="lazy" src="./assets/accreditations/The_Coat_of_Arms_of_Malaysia.svg"
+                        <img width="200" height="150" loading="lazy"
+                            src="./assets/accreditations/The_Coat_of_Arms_of_Malaysia.svg"
                             alt="The Coat of Arms of Malaysia" title="The Coat of Arms of Malaysia">
                     </a>
                 </div>
