@@ -39,11 +39,11 @@
     --txt-paragraph: hsl(0, 0%, 45%);
     --txt-light: hsl(0, 0%, 100%);
 
-    --spc-900: clamp(1.5rem, 0.5rem + 5vw, 5rem);
-    --spc-800: clamp(1.125rem, 0.375rem + 3.75vw, 3.75rem);
-    --spc-700: clamp(1.125rem, 0.7321rem + 1.9643vw, 2.5rem);
-    --spc-600: clamp(1rem, 0.75rem + 1.25vw, 1.875rem);
-    --spc-500: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+    --spc-900: clamp(1.25rem, 0.3448rem + 5.1724vw, 5rem);
+    --spc-800: clamp(1rem, 0.3362rem + 3.7931vw, 3.75rem);
+    --spc-700: clamp(1rem, 0.6379rem + 2.069vw, 2.5rem);
+    --spc-600: clamp(1rem, 0.7888rem + 1.2069vw, 1.875rem);
+    --spc-500: clamp(1rem, 0.9397rem + 0.3448vw, 1.25rem);
 
     --bxs-primary: 1px 2px 4px var(--txt-secondary);
 }
