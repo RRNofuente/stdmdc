@@ -389,11 +389,23 @@ nav {
 footer {
     text-align: center;
     padding-block: var(--spc-700);
+    padding-inline: var(--spc-800);
+}
+
+div:has(> p) {
+    max-width: 70ch;
+    min-width: 30ch;
 }
 
 @media (min-width: 90em) {
-    body > * {
-        max-width: 1440px;
-        margin: 0 auto;
+    nav,
+    footer,
+    #hero-section,
+    #about-section,
+    #mission-vision-goals-section,
+    #services-section,
+    #accreditations-section,
+    #contact-section {
+        padding-inline: calc((100vw - 90em) / 2 + 3.75rem);
     }
 }
