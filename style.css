@@ -170,21 +170,22 @@ nav {
 
 #hero-section {
     display: grid;
-    grid-template-columns: minmax(20ch, 1fr) minmax(300px, 1fr);
+    grid-template-columns: minmax(30ch, 1fr) minmax(300px, 1fr);
     align-items: center;
     gap: var(--spc-500);
 
     padding-block: var(--spc-900);
     padding-inline: var(--spc-800);
 
+    & h1 {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
     & .text-content-cta-wrapper {
         display: grid;
         gap: var(--spc-600);
         justify-items: start;
-
-        & h1 {
-            text-wrap: balance;
-        }
+        align-self: start;
     }
 
     & .image-content-wrapper {
@@ -243,7 +244,7 @@ nav {
 
     & > div {
         display: grid;
-        grid-template-columns: minmax(300px, 1fr) minmax(20ch, 1fr);
+        grid-template-columns: minmax(300px, 1fr) minmax(30ch, 1fr);
         align-items: center;
         gap: var(--spc-500);
 
@@ -261,6 +262,11 @@ nav {
         & div:has(p) {
             display: grid;
             gap: var(--spc-500);
+
+            & h3 {
+                font-size: calc(var(--fs-heading-tertiary) * 0.75);
+                line-height: calc(var(--lh-heading-tertiary) * 0.75);
+            }
         }
     }
 }
@@ -390,9 +396,9 @@ nav {
         }
 
         & h3 {
-            font-size: calc(var(--fs-heading-tertiary) * 0.8);
+            font-size: calc(var(--fs-heading-tertiary));
             font-weight: var(--fw-medium);
-            line-height: calc(var(--lh-heading-tertiary) * 0.8);
+            line-height: calc(var(--lh-heading-tertiary));
             margin-bottom: 1rem;
         }
 
@@ -426,7 +432,7 @@ footer {
 
 div:has(> p) {
     max-width: 70ch;
-    min-width: 20ch;
+    min-width: 30ch;
 }
 
 .mobile-menu {
@@ -453,7 +459,7 @@ div:has(> p) {
     #services-section,
     #accreditations-section,
     #contact-section {
-        padding-inline: calc((100vw - 90em) / 2 + 3.75rem);
+        padding-inline: calc((100vw - 90em) / 2 + var(--spc-800));
     }
 }
 
@@ -467,10 +473,6 @@ div:has(> p) {
             font-size: calc(var(--fs-paragraph) * 0.84);
         }
     }
-
-    #hero-section h1 {
-        font-size: calc(var(--fs-heading-primary) * 0.8);
-    }
 }
 
 @media (max-width: 56.5em) {
@@ -478,10 +480,26 @@ div:has(> p) {
         display: none;
     }
 
-    :is(#hero-section, #about-section > div, #contact-section > div) {
-        grid-template-columns: minmax(20ch, 1fr);
+    :is(#about-section > div, #contact-section > div) {
+        grid-template-columns: minmax(30ch, 1fr);
         justify-items: center;
         gap: var(--spc-700);
+    }
+
+    #hero-section {
+        grid-template-columns: minmax(30ch, 1fr);
+        justify-items: center;
+        gap: var(--spc-700);
+        grid-template-rows: repeat(3, auto);
+
+        & .text-content-cta-wrapper {
+            grid-area: 2 / 1 / 3 / -1;
+            justify-self: start;
+        }
+
+        & .image-content-wrapper {
+            grid-area: 3 / 1 / 4 / -1;
+        }
     }
 
     #hero-section > div {
