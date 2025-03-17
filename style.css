@@ -411,6 +411,7 @@ nav {
 
             & > iframe {
                 aspect-ratio: 600 / 450;
+                width: 100%;
                 height: auto;
             }
         }
