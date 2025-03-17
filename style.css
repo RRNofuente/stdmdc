@@ -311,7 +311,7 @@ nav {
             padding: var(--spc-600) var(--spc-700);
 
             & :is(ul, ol) > li {
-                margin-inline-start: var(--spc-700);
+                margin-inline-start: calc(var(--spc-500) * 0.65);
             }
         }
     }
