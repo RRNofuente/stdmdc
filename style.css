@@ -170,7 +170,7 @@ nav {
 
 #hero-section {
     display: grid;
-    grid-template-columns: minmax(30ch, 1fr) minmax(300px, 1fr);
+    grid-template-columns: minmax(20ch, 1fr) minmax(300px, 1fr);
     align-items: center;
     gap: var(--spc-500);
 
@@ -243,7 +243,7 @@ nav {
 
     & > div {
         display: grid;
-        grid-template-columns: minmax(300px, 1fr) minmax(30ch, 1fr);
+        grid-template-columns: minmax(300px, 1fr) minmax(20ch, 1fr);
         align-items: center;
         gap: var(--spc-500);
 
@@ -426,7 +426,7 @@ footer {
 
 div:has(> p) {
     max-width: 70ch;
-    min-width: 30ch;
+    min-width: 20ch;
 }
 
 .mobile-menu {
@@ -479,26 +479,26 @@ div:has(> p) {
     }
 
     :is(#hero-section, #about-section > div, #contact-section > div) {
-        grid-template-columns: minmax(30ch, 1fr);
+        grid-template-columns: minmax(20ch, 1fr);
         justify-items: center;
         gap: var(--spc-700);
     }
 
     #hero-section > div {
         & .image-content-wrapper {
-            min-width: 250px;
+            min-width: 150px;
         }
     }
 
     #about-section > div {
         & div:has(img) {
-            min-width: 250px;
+            min-width: 150px;
         }
     }
 
     #contact-section > div {
         & div:has(iframe) {
-            min-width: 250px;
+            min-width: 150px;
         }
     }
 }
@@ -551,5 +551,13 @@ div:has(> p) {
 @media (max-width: 22.5em) {
     :is(#hero-section, #contact-section) .cta-primary {
         width: 100%;
+    }
+}
+
+@media (max-width: 20em) {
+    #services-section {
+        & .services-card {
+            width: 15em;
+        }
     }
 }
