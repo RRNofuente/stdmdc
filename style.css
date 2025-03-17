@@ -7,9 +7,9 @@
     font-display: swap;
 }
 
-* {
+/* * {
     outline: 1px dotted red;
-}
+} */
 
 :root {
     --fs-heading-primary: clamp(1.875rem, 1.4821rem + 1.9643vw, 3.25rem);
@@ -38,9 +38,9 @@
     --txt-paragraph: hsl(0, 0%, 45%);
     --txt-light: hsl(0, 0%, 100%);
 
-    --spc-900: clamp(1.875rem, 0.9821rem + 4.4643vw, 5rem);
-    --spc-800: clamp(1.5rem, 0.8571rem + 3.2143vw, 3.75rem);
-    --spc-700: clamp(1.25rem, 0.8929rem + 1.7857vw, 2.5rem);
+    --spc-900: clamp(1.5rem, 0.5rem + 5vw, 5rem);
+    --spc-800: clamp(1.125rem, 0.375rem + 3.75vw, 3.75rem);
+    --spc-700: clamp(1.125rem, 0.7321rem + 1.9643vw, 2.5rem);
     --spc-600: clamp(1rem, 0.75rem + 1.25vw, 1.875rem);
     --spc-500: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
 
@@ -170,7 +170,7 @@ nav {
 
 #hero-section {
     display: grid;
-    grid-template-columns: minmax(35ch, 1fr) minmax(300px, 1fr);
+    grid-template-columns: minmax(30ch, 1fr) minmax(300px, 1fr);
     align-items: center;
     gap: var(--spc-500);
 
@@ -229,7 +229,7 @@ nav {
 
     & > div {
         display: grid;
-        grid-template-columns: minmax(300px, 1fr) minmax(35ch, 1fr);
+        grid-template-columns: minmax(300px, 1fr) minmax(30ch, 1fr);
         align-items: center;
         gap: var(--spc-500);
 
@@ -407,5 +407,63 @@ div:has(> p) {
     #accreditations-section,
     #contact-section {
         padding-inline: calc((100vw - 90em) / 2 + 3.75rem);
+    }
+}
+
+@media (max-width: 67.5em) {
+    #brand-title-wrapper {
+        & > div:first-child {
+            font-size: calc(var(--fs-heading-tertiary) * 0.8);
+        }
+
+        & > div:last-child {
+            font-size: calc(var(--fs-paragraph) * 0.84);
+        }
+    }
+
+    #hero-section h1 {
+        font-size: calc(var(--fs-heading-primary) * 0.8);
+    }
+}
+
+@media (max-width: 54.5em) {
+    #brand-title-wrapper {
+        display: none;
+    }
+
+    :is(#hero-section, #about-section  > div, #contact-section  > div) {
+        grid-template-columns: minmax(30ch, 1fr);
+        justify-items: center;
+        gap: var(--spc-700);
+    }
+
+    #hero-section > div {
+        & .image-content-wrapper {
+            min-width: 250px;
+        }
+    }
+
+    #about-section > div {
+        & div:has(img) {
+            min-width: 250px;
+        }
+    }
+
+    #contact-section > div {
+        & div:has(iframe) {
+            min-width: 250px;
+        }
+    }
+}
+
+@media (max-width: 38.75em) {
+    nav ul[role="list"] {
+        display: none;
+    }
+}
+
+@media (max-width: 22.5em) {
+    :is(#hero-section, #contact-section) .cta-primary {
+        width: 100%;
     }
 }
