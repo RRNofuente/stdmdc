@@ -31,6 +31,7 @@
     --ff-default: "Playfair Display";
 
     --clr-primary: hsl(137, 56%, 24%);
+    --clr-primary-accent: hsl(137, 56%, 30%);
     --clr-secondary: hsl(30, 100%, 58%);
     --clr-light: hsl(0, 0%, 100%);
 
@@ -118,12 +119,11 @@ nav a {
     color: inherit;
 }
 
-nav li a:hover {
-    color: var(--clr-secondary);
+nav a:hover {
+    opacity: 0.85;
 }
 
-nav li a:is(:focus, :focus-visible) {
-    color: var(--clr-secondary);
+nav a:is(:focus, :focus-visible) {
     text-decoration: underline;
 }
 
@@ -131,10 +131,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--spc-500);
-
     padding-block: var(--spc-600);
     padding-inline: var(--spc-800);
+
+    & > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     & .brand-wrapper > a {
         display: flex;
@@ -397,6 +401,21 @@ div:has(> p) {
     min-width: 30ch;
 }
 
+.mobile-menu {
+    visibility: hidden;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    background: url(./assets/menu.svg) center/contain no-repeat;
+}
+
+.mobile-menu.close {
+    background: url(./assets/close.svg) center/contain no-repeat;
+}
+
 @media (min-width: 90em) {
     nav,
     footer,
@@ -426,12 +445,12 @@ div:has(> p) {
     }
 }
 
-@media (max-width: 54.5em) {
+@media (max-width: 56.5em) {
     #brand-title-wrapper {
         display: none;
     }
 
-    :is(#hero-section, #about-section  > div, #contact-section  > div) {
+    :is(#hero-section, #about-section > div, #contact-section > div) {
         grid-template-columns: minmax(30ch, 1fr);
         justify-items: center;
         gap: var(--spc-700);
@@ -457,8 +476,47 @@ div:has(> p) {
 }
 
 @media (max-width: 38.75em) {
+    nav {
+        padding: 0;
+
+        & > div {
+            padding-block: var(--spc-600);
+            padding-inline: var(--spc-800);
+        }
+    }
+
+    header nav {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
     nav ul[role="list"] {
+        grid-column: 1 / -1;
+        gap: 0;
+        background-color: var(--clr-primary-accent);
+        display: grid;
+
+        & li {
+            cursor: pointer;
+            padding: calc(var(--spc-500) * 0.8) var(--spc-800);
+            border-block: 1px solid var(--clr-primary-accent);
+        }
+
+        & li:hover {
+            background-color: var(--clr-light);
+            color: var(--clr-primary);
+            border-block: 1px solid var(--txt-paragraph);
+        }
+    }
+
+    nav ul[role="list"].menu-closed {
         display: none;
+    }
+
+    .mobile-menu {
+        visibility: visible;
+        justify-self: end;
+        align-self: center;
     }
 }
 
