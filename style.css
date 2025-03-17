@@ -511,6 +511,10 @@ div:has(> p) {
             padding-block: var(--spc-600);
             padding-inline: var(--spc-800);
         }
+
+        & img {
+            width: 56px;
+        }
     }
 
     header nav {
