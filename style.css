@@ -177,10 +177,6 @@ nav {
     padding-block: var(--spc-900);
     padding-inline: var(--spc-800);
 
-    & h1 {
-        grid-area: 1 / 1 / 2 / 3;
-    }
-
     & .text-content-cta-wrapper {
         display: grid;
         gap: var(--spc-600);
@@ -189,44 +185,14 @@ nav {
     }
 
     & .image-content-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-
-        background: url(./assets/backgrounds/hero_images_background.webp) top
-            left -20px/120% no-repeat;
-
+        justify-self: center;
         & img {
             border-radius: 40px;
             overflow: hidden;
-        }
-
-        & div:first-child {
-            justify-self: end;
-            width: 80%;
-
-            & > img {
-                aspect-ratio: 256 / 232;
-                height: auto;
-            }
-        }
-
-        & div:nth-child(2) {
-            align-self: end;
-
-            & > img {
-                aspect-ratio: 320 / 167;
-                height: auto;
-            }
-        }
-
-        & div:last-child {
-            grid-column: 1 / -1;
-
-            & > img {
-                aspect-ratio: 650 / 260;
-                height: auto;
-            }
+            aspect-ratio: 386 / 350;
+            height: auto;
+            object-position: center;
+            object-fit: cover;
         }
     }
 }
