@@ -244,18 +244,21 @@ nav {
 
     & > div {
         display: grid;
-        grid-template-columns: minmax(300px, 1fr) minmax(30ch, 1fr);
+        grid-template-columns: minmax(225px, 400px) minmax(30ch, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         align-items: center;
         gap: var(--spc-500);
 
         & div:has(img) {
             border-radius: 40px;
             overflow: hidden;
-            min-width: 300px;
-            max-width: 600px;
+            min-width: 225px;
+            max-width: 400px;
             & > img {
-                aspect-ratio: 600 / 334;
+                aspect-ratio: 400 / 225;
                 height: auto;
+                object-position: center;
+                object-fit: cover;
             }
         }
 
@@ -482,8 +485,17 @@ div:has(> p) {
 
     :is(#about-section > div, #contact-section > div) {
         grid-template-columns: minmax(30ch, 1fr);
+        grid-template-rows: repeat(6, auto);
         justify-items: center;
         gap: var(--spc-700);
+    }
+
+    #about-section h3 {
+        margin-top: var(--spc-600);
+    }
+
+    #about-section div:has(~ div > h3):has(p) {
+        margin-bottom: var(--spc-600);
     }
 
     #hero-section {
