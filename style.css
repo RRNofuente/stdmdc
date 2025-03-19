@@ -114,10 +114,6 @@ nav a:hover {
     opacity: 0.85;
 }
 
-nav a:is(:focus, :focus-visible) {
-    text-decoration: underline;
-}
-
 nav {
     display: flex;
     align-items: center;
@@ -157,6 +153,10 @@ nav {
                 font-size: calc(var(--fs-paragraph) * 1.05);
             }
         }
+    }
+
+    #nav-links-list a:is(:focus, :focus-visible) {
+        text-decoration: underline;
     }
 
     & ul {
